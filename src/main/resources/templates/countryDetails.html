@@ -1,0 +1,40 @@
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Display Country Details</title>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+</style>
+
+</head>
+<body>
+	<center><table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Lending Type</th>
+			<th>Capital City</th>
+			<th>Income Level</th>
+		</tr>
+		<tr th:each="country : ${countryList}">
+			<!-- <td th:text="${country.name}">Name</td> -->
+			<td th:text="${country.lendingType}">Lending Type</td>
+			<td th:text="${country.capitalCity}">Capital City</td>
+			<td th:text="${country.incomeLevel}">Income Level</td>
+		</tr>
+	</table></center>
+	<br/>
+    <center><strong><a href="/">Go Back</a></strong></center>
+</body>
+</html>
